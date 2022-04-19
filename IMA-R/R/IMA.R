@@ -29,7 +29,7 @@ IMA_params <- function(rank,u_bounds,l_bounds=c(0,0),maxiter=1000000,stop_crit=0
 #' @param lambda_ scaling matrix
 #' @param params parameter object
 #'
-#' @return updated matrix
+#' @return updated matrix and scaling factors
 IMA_Update_Factor <- function(M,coeff,mkrp,mode,lambda_,params){
 
     r <- ncol(M)
@@ -73,7 +73,7 @@ IMA_Update_Factor <- function(M,coeff,mkrp,mode,lambda_,params){
 
 #' rescale if max val is above upper bound
 #'
-#' @param h matrix
+#' @param h matrix to be rescaled
 #' @param l_bound lower bound
 #' @param u_bound upper bound
 #'
