@@ -1,3 +1,5 @@
+import numpy as np
+
 class IMA_params:
     '''
     Establish parameter class for IMA
