@@ -163,7 +163,7 @@ def _IMA_init(X, params):
             0, X.shape[0], params.rank
         )  # random integers 1 to num cells, choose R
         initV = X[pat_picked, :].T  # pull random cells, transpose
-        initV = IMA_Compute_Init_Scaled(
+        initV = _IMA_Compute_Init_Scaled(
             initV, params.l_bounds[1], params.u_bounds[1]
         )  # rescale to within bounds
 
@@ -211,12 +211,12 @@ def IMA(X, params):
         ## Update U and lambda
         A = np.dot(X, V)  # mkrp
         B = np.dot(V.T, V)  # coeff
-        U, lambda_ = IMA_Update_Factor(U, B, A, 0, lambda_, params)
+        U, lambda_ = _IMA_Update_Factor(U, B, A, 0, lambda_, params)
 
         ## Update V and lambda
         A = np.dot(X.T, U)  # mkrp
         B = np.dot(U.T, U)  # coeff
-        V, lambda_ = IMA_Update_Factor(V, B, A, 1, lambda_, params)
+        V, lambda_ = _IMA_Update_Factor(V, B, A, 1, lambda_, params)
         V_ = np.dot(V, np.diag(lambda_))
 
         # Check convergence
