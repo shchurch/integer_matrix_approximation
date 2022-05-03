@@ -185,7 +185,7 @@ def IMA(X, params):
             Returns:
                     U, V, and Lambda matrix factors
     '''
-    initU, initV, initLambda = IMA_init(X, params)
+    initU, initV, initLambda = _IMA_init(X, params)
 
     U = initU  # initialize U
     V = initV  # initialize V
