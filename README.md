@@ -12,7 +12,7 @@ We welcome forks of this repository that expand or optimize this code for `pytho
 
 ### python
 
-To prepare a conda environment and install countland (before first use):
+To prepare a conda environment and install IMA (before first use):
 
     conda create -n IMA -c conda-forge
     conda activate IMA
